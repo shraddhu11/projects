@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Registration Form</title>
+    <link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="container-fluid">
+    <header>
+        <h2 class="text-center p-3 text-decoration-underline">Hotel Registration Form</h2>
+    </header>
+    <section>
+        <div>
+            <div class="text-bg-dark mt-2 fs-4 text-center" style="height: 40px;">Customer Info</div>
+        </div>
+        <div class="border mt-1 w-100 h-50">
+            <dl class="row m-3 mt-1">
+                <dt class="col-5">Customer Name</dt>
+                <dd class="col-7"><input type="text" id="custName" onblur="hideMssg()"> text <span id="msg" class="text-danger"></span></dd>
+                <dt class="col-5">Check in Date</dt>
+                <dd class="col-7"><input type="date" id="date"> date</dd>
+                <dt class="col-5">Total no.of Days</dt>
+                <dd class="col-7"><input type="number" id="tDays"> number</dd>
+                <dt class="col-5">Total no.of Persons</dt>
+                <dd class="col-7"><input type="number" id="tPerson"> number</dd>
+            </dl>
+        </div>
+            <div>
+                <div class="text-bg-dark mt-2 fs-4 text-center" style="height: 40px;">Select Room Type</div>
+            </div>
+            <div class="mt-1 border w-100 h-50">
+                <div class="row ms-lg-5">
+                    <div class="col-8 m-2">
+                        <div class="border border-black"></div>
+                        <input type="radio" class="form-check-input" value="Delux Room" name="Rent" id="delRoom"> Delux Room [&#8377 2500/-]
+                    </div>
+                    <div class="col">
+                        <div class="border border-black"></div>
+                        <input type="radio" class="form-check-input" value="Suite Room" name="Rent" id="suitRoom"> Suite Room [&#8377 4000/-]
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="text-bg-dark mt-2 fs-4 text-center" style="height: 40px;">Select Amenties</div>
+            </div>
+            <div class="mt-1 border w-100 h-50">
+                <div class="row ms-lg-5">
+                    <div class="col-8 m-2">
+                        <div id="borderCheck"></div>
+                        <input type="checkbox" class="form-check-input" id="acCheck" value="A/C"> A/C [&#8377 1000/-]
+                    </div>
+                    <div class="col">
+                        <div id="borderCheck"></div>
+                        <input type="checkbox" class="form-check-input" id="lockCheck" value="Locker"> Locker [&#8377 300/-]
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="text-bg-dark mt-2 fs-4 text-center" style="height: 40px;">Advance Amount</div>
+            </div>
+            <div class=" border mt-1" id="Amt">
+                <h6 class="text-center p-3">Advance Amount <input type="text" onblur="advanceClick()" id="advance"> <span id="AdvanceAmt"></span></h6>
+            </div>
+        </div>
+    </section>
+    <div>
+        <button class="btn btn-dark mt-2" id="button" onclick="registerClick()" data-bs-target="#billSummary" data-bs-toggle="modal">Register</button>
+    </div>
+    <div class="modal fade" id="billSummary">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3> Bill Details</h3>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <dl class="row">
+                        <dt class="col-5">Customer Name</dt>
+                        <dd id="lblName" class="col-7"></dd>
+                        <dt class="col-5">Check in date</dt>
+                        <dd id="lblDate" class="col-7"></dd>
+                        <dt class="col-5">Todal no.of days</dt>
+                        <dd id="lblDay" class="col-7"></dd>
+                        <dt class="col-5">Total no.of Person</dt>
+                        <dd id="lblPerson" class="col-7"></dd>
+                        <dt class="col-5">Room Type</dt>
+                        <dd id="lblRtype" class="col-7"></dd>
+                        <dt class="col-5" >Extra Amenties</dt>
+                        <dd id="lblAmnt" class="col-7"></dd>
+                        <dt class="col-5">Total Amount</dt>
+                        <dd id="lbltotal" class="col-7"></dd>
+                    </dl>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-dark" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="../bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../jquery/dist/jquery.js"></script>
+</body>
+</html>

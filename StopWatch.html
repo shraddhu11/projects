@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Stopwatch Project</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            background: url(../projects/assets/stopwatch.jpg);
+            background-size: cover;
+            backdrop-filter: blur(10px);
+        }
+        .container{
+            width: 550px;
+            height: 300px;
+            margin: 15%;
+            background: linear-gradient(rgba(161, 148, 247, 0.5),rgb(225, 176, 246));
+            backdrop-filter: blur(5px);
+            border: 0px solid gray;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px aliceblue;
+            text-align: center; 
+        }
+        h1{
+            margin-top: 50px;
+            font-size: 60px;
+        }
+        button{
+            width: 150px;
+            height: 45px;
+            border: 0;
+            background-color: darkcyan;
+            border-radius: 10px;
+            font-size: 30px;
+            margin: 10px;
+        }
+        button:hover{
+            background-color: gray;
+            color: black;
+            opacity: 0.5;
+        }
+    </style>
+    <script>
+
+        let startTime = 0
+        let endTime = 0;
+        let timerInterval;
+    
+        function startClick(){
+            var stopwatch = document.getElementById("stopwatch");
+            startTime = Date.now() - endTime;
+            timerInterval = setInterval(() => {
+                endTime= Date.now() - startTime;
+                stopwatch.textContent = formatTime(endTime)
+            }, 10);
+        }
+
+        function formatTime(endTime){
+            const milliseconds = Math.floor((endTime % 1000)/10);
+            const seconds = Math.floor((endTime % (1000 * 60))/1000);
+            const minutes = Math.floor((endTime % (1000 * 60 * 60))/(1000-60));
+            const hours = Math.floor(endTime / (1000 * 60 *60));
+
+            return(
+                (hours ? (hours > 9 ? hours:"0" + hours): "00") +
+                ":" +
+                (minutes ? (minutes > 9 ? minutes:"0" + minutes): "00") +
+                ":" +
+                (seconds ? (seconds > 9 ? seconds:"0" + seconds): "00") +
+                ":" +
+                (milliseconds ? (milliseconds > 9 ? milliseconds:"0" + milliseconds): "00")
+            );
+        }
+        function stopClick(){
+            clearInterval(timerInterval);
+
+        }
+        function resetClick(){
+            clearInterval(timerInterval);
+            endTime = 0;
+            stopwatch.textContent = "00:00:00"
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 id="stopwatch">00:00:00</h1>
+        <div class="btn-Container">
+            <button id="" onclick="startClick()">Start</button>
+            <button id="" onclick="stopClick()">Stop</button>
+            <button id="" onclick="resetClick()">Reset</button>
+        </div>
+    </div>
+</body>
+</html>
