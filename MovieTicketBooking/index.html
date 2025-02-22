@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Price Calculator</title>
+    <link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center mb-4">Movie Ticket Booking</h2>
+        <div class="form-group">
+            Your Name: <input type="text" name="Name" id="Name" class="form-control w-50" placeholder="Enter your Name">
+        </div>
+        <div class="form-group">
+            Show Name(Latest Hindi Release):
+            <select class="form-select w-50" name="ShowName" id="showSelect">
+                <option>Select a Show</option>
+                <option value="Chhava">Chhava</option>
+                <option value="Sky Force">Sky Force</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Pushpa 2">Pushpa 2</option>
+            </select>
+        </div>
+        <div class="form-group">
+            Number Of Tickets: <input type="number" name="NumberOfTickets" value="1" min="1" id="tickets" class="form-control w-50">
+            
+        </div>
+        <div class="form-group">
+            Show Time(24-hrs format): 
+            <select class="form-select w-50" name="ShowTime" id="timeSelect">
+                <option>Select Time</option>
+                <option value="10:00">10:00</option>
+                <option value="13:00">13:00</option>
+                <option value="16:00">16:00</option>
+                <option value="19:00">19:00</option>
+            </select>
+        </div>
+        <div class="form-group">
+            Select Seat Type:
+            <select class="form-select w-50" name="SeatType" id="seatSelect">
+                <option>Select Seat Type</option>
+                <option value="Silver - &#8377;180">Silver - &#8377;180</option>
+                <option value="Gold - &#8377;200">Gold - &#8377;200</option>
+                <option value="Executive - &#8377;250">Executive - &#8377;250</option>
+                <option value="Sofa - &#8377;350">Sofa - &#8377;350</option>
+            </select>
+        </div>
+        <button class="btn btn-dark mt-2 ms-2 w-50" onclick="BookTickets()" data-bs-toggle="modal" data-bs-target="#showTicketSummary" >Book Ticket</button>
+        <div id="totalPriceMsg"></div>
+
+        <div class="modal" id="showTicketSummary">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Booking Suucessfully..!</h3>
+                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <dl class="row">
+                            <dt class="col-3">Name:</dt>
+                            <dd class="col-9" id="txtName"></dd>
+                            <dt class="col-3">Show Name:</dt>
+                            <dd class="col-9" id="showName"></dd>
+                            <dt class="col-3">No. of Tickets:</dt>
+                            <dd class="col-9" id="numTickets"></dd>
+                            <dt class="col-3">Show Time:</dt>
+                            <dd class="col-9" id="showTime"></dd>
+                            <dt class="col-3">Seat Type:</dt>
+                            <dd class="col-9" id="seatType"></dd>
+                            <dt class="col-3">Total:</dt>
+                            <dd class="col-9" id="totalBill"></dd>
+                        
+                        </dl>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-dark" data-bs-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <script src="script.js"></script>
+    <script src="../jquery/dist/jquery.js"></script>
+    <script src="../bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
