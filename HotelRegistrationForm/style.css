@@ -5,6 +5,9 @@ body{
 .container-fluid{
     width: 60%;
 }
+section{
+    background-color: aliceblue;
+}
 .border{
     width: 100px;
     height: 100px;

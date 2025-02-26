@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../FlightTicketBooking/flightImg.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+
+.container{
+    width: 500px;
+    height: 350px;
+    border: 0;
+    border-radius: 15px;
+    background:rgba(248, 181, 122, 0.5);
+    backdrop-filter: blur(5px);
+    margin: 20px;
+    padding: 30px;
+    text-align: center;
+    
+}
+select{
+    border: 0;
+    border-radius: 5px;
+    width: 150px;
+    height: 30px;
+    margin: 10px;
+}
+input{
+    border: 0;
+    border-radius: 5px;
+    width: 150px;
+    height: 30px;
+}
+.form-group{
+    margin: 10px;
+}
+button{
+    width: 150px;
+    height: 30px;
+    border: 0;
+    border-radius: 10px ;
+    background-color:black;
+    color: white;
+    font-weight: bold;
+}
+button:hover{
+    opacity: 0.3;
+}
+.msg{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+}

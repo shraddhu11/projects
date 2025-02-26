@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Ticket Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Flight Ticket Booking</h1>
+        <div class="form-group">
+            Select Class :
+            <select id="ticketClass">
+                <option>Select a Class</option>
+                <option>Economy</option>
+                <option>Buisness</option>
+                <option>First Class</option>
+            </select>
+        </div>
+        <div class="form-group">
+            Enter a Luggage Weight(kg) : 
+            <input type="number" id="luggageWeight">
+        </div>
+        <div class="form-group">
+            Are you Student? 
+            <select id="isStudent">
+                <option value="Yes">Yes(-15% Discount)</option>
+                <option>No</option>
+            </select>
+        </div>
+        <div class="form-group">
+            Are you Senior(60+ years)?
+            <select id="isSenior">
+                <option>Yes</option>
+                <option>No</option>
+            </select>
+        </div>
+        <button onclick="calculateFare()">Calculate Fare</button>
+        <div id="total" class="msg"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
